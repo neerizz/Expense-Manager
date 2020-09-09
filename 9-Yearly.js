@@ -1,0 +1,1 @@
+    $('.yearpicker').yearpicker();

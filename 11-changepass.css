@@ -1,0 +1,33 @@
+.formcontrol small{
+    visibility: hidden;
+}
+
+.formcontrol input{
+    max-width: 100%;
+    width: 100%;
+}
+
+.formcontrol.error small{
+    margin-top: 0;
+    visibility: visible;
+    color: white;
+    font-family: 'Source Sans Pro';
+}
+
+.formcontrol.error {
+    margin-bottom: 20px;
+}
+
+.formcontrol input{
+    margin-bottom: 30px;
+}
+
+.formcontrol.error input{
+    margin-bottom: 0px;
+    width: 100%;
+}
+
+.formcontrol.success small{
+    visibility:hidden;
+}
+
