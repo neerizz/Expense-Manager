@@ -1,0 +1,406 @@
+@media screen and (max-width: 1023px){
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .img-container {
+        display: none;
+    }
+
+    body{
+        background-image: linear-gradient(to top, #eeeeee, #ffffff);
+    }
+
+    .mob-hidden{
+        position: absolute;
+        top: 5%;
+        max-width: 80%;
+    }
+
+    .top-heading{
+        display: none;
+    }
+    
+    h1{
+        font-size: 2rem;
+        color:  #3FC1C9;
+        font-family: 'Source Sans Pro';
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 90px;
+    }
+    
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0 10vw;
+    }
+    
+    .container form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80vw;
+    }
+    
+    .form img{
+        margin: 0 0 20px 0;
+    }
+    
+    .group{
+        margin-top: 40%;
+    }
+    
+    .group input{
+        max-width: 300px;
+        padding: 5px 5px 5px 40px;
+        margin: 0 0 30px 0;
+        bottom: 0;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.43);
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        background: none;
+    }
+
+    .form-controller small{
+        display: none;
+    }
+
+    .form-controller.mistake small{
+        visibility : visible;
+        color: red;
+        display: inline-block;
+        margin-bottom: 15px !important;
+        font-family: 'Source Sans Pro';
+    }
+
+    .form-controller.mistake input {
+        margin-bottom: 0;
+    }
+
+    .form-controller.successful small{
+        display: none;
+    }
+    .group i{
+        color: rgba(255, 0, 0, 0.54);
+        width:5px;
+        height: 5px;
+        position: absolute;
+        margin: 5px;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    a:hover{
+        cursor: pointer;
+    }
+    
+    .sign-in{
+        outline: 0 !important;
+        border: none;
+        color: #dddddd;
+        background-color: rgba(5, 0, 255, 0.81);
+        padding: 5px 35px 5px 35px;
+        margin-top: 20px;
+        border-radius: 7px;
+        font-size: 0.9em;
+        font-family: 'Source Sans Pro';
+    }
+    
+    .fb-btn{
+        outline: 0 !important;
+        border: none;
+        color: #dddddd;
+        background-color: rgba(5, 0, 255, 0.81);
+        border-radius: 7px;
+        font-size: 0.9em;
+        width: 100px;
+        height: 30px;
+        font-family: 'Source Sans Pro';
+    }
+
+    .google-btn{
+        outline: 0 !important;
+        border: none;
+        color: #dddddd;
+        background-color: rgba(255, 0, 0, 0.54);
+        border-radius: 7px;
+        font-size: 0.9em;
+        width: 100px;
+        height: 30px;
+        font-family: 'Source Sans Pro';
+    }
+
+    .social-btn i{
+        width: 10px;
+        height: 10px;
+        padding: 5px 15px 0 0px;
+    }
+
+    .new-account{
+        padding: 20px 0;
+    }
+
+    .or-text{
+        padding: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.43);;
+        border-radius: 50px;
+        margin: 20px 0;
+    }
+
+    .fgt-pwd{
+        color:rgba(0, 0, 0, 0.43);
+        /* padding-left: 60px; */
+        font-weight: bold;
+        /* margin-top: 10px */
+        text-decoration: none;
+        font-family: 'Source Sans Pro';
+    }
+    
+    .or-text span{
+        color: rgba(0, 0, 0, 0.43);
+    }
+    span{
+        width: 100%;
+    }
+    
+    span img{
+        width: 100%;
+        margin-top: 3.6px;
+        margin-left: -0.55px;
+    }
+    
+    ::placeholder{
+        font-family: 'Source Sans Pro';
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.43);
+        font-weight: thin;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+
+    body{
+        background-image: linear-gradient(to top, #eeeeee, #ffffff);
+    }
+
+    .mob-hidden{
+        display: none;
+    }
+
+    .top-heading{
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .top-heading h1{
+        font-size: 50px;
+        max-width: 100%;
+    }
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    h1{
+        font-size: 3rem;
+        color:  #3FC1C9;
+        font-family: 'Source Sans Pro';
+        text-align: center;
+        font-weight: 600;
+        position: relative;
+        left: -60px;
+        top: 20px;
+    }
+    
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0 10vw;
+    }
+    
+    .container form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80vw;
+    }
+    
+    .form img{
+        margin: 0 0 20px 0;
+    } 
+    
+    .group{ 
+        padding-top: 140px;
+    }
+    .group input{
+        max-width: 300px;
+        padding: 5px 5px 5px 40px;
+        margin: 0 0 30px 0;
+        bottom: 0;
+        border: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.54);
+        border-radius: 0;
+        outline: none;
+        box-shadow: none;
+        background: none;
+    }
+    
+    .form-controller small{
+        display: none;
+    }
+
+    .form-controller.mistake small{
+        visibility : visible;
+        color: red;
+        display: inline-block;
+        margin-bottom: 15px !important;
+        font-family: 'Source Sans Pro';
+    }
+
+    .form-controller.mistake input {
+        margin-bottom: 0;
+    }
+
+    .form-controller.successful small{
+        display: none;
+    }
+
+    .group i{
+        color: rgba(255, 0, 0, 0.54);
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        margin: 5px;
+    }
+
+    span{
+        width: 100%;
+    }
+    
+    span img{
+        width: 100%;
+        margin-top: 3.6px;
+        margin-left: -0.55px;
+    }
+
+    button:hover{
+        cursor: pointer;
+    }
+
+    a:hover{
+        cursor: pointer;
+    }
+    
+    .sign-in{
+        border: none;
+        color: white;
+        background-color: rgba(5, 0, 255, 0.81);
+        padding: 5px 35px 5px 35px;
+        margin-top: 0px;
+        border-radius: 7px;
+        font-size: 0.9em;
+        font-family: 'Source Sans Pro';
+    }
+
+    .or-text{
+        padding: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.43);;
+        border-radius: 50px;
+        margin: 20px 0;
+    }
+
+    .fgt-pwd{
+        color:rgba(0, 0, 0, 0.43);;
+        /* padding-left: 60px; */
+        font-weight: bold;
+        /* margin-top: 10px */
+        text-decoration: none;
+        font-family: 'Source Sans Pro';
+    }
+
+    .sign-in{
+        outline: 0;
+        margin-top: 20px;
+    }
+
+    .or-text span{
+        color: rgba(0, 0, 0, 0.43);
+    }
+    
+    .social-btn i{
+        font-size: 1em;
+        color: white;
+        /* padding: 0 20px; */
+    }
+
+    .social-btn button{
+        outline: 0;
+        width: 100px;
+    }
+
+    .social-btn i{
+        font-size: 15px;
+        padding: 0 10px 0 5px;
+    }
+
+    .fb-btn{
+        outline: 0 !important;
+        border: none;
+        /* max-width: 140px; */
+        color: #dddddd;
+        background-color: rgba(5, 0, 255, 0.81);
+        /* padding: 5px 35px 5px 35px; */
+        /* margin-top: 20px; */
+        border-radius: 7px;
+        font-size: 1em;
+        /* width: 100px; */
+        height: 30px;
+        font-family: 'Source Sans Pro';
+    }
+
+    .google-btn{
+        outline: 0 !important;
+        border: none;
+        color: #dddddd;
+        background-color: rgba(255, 0, 0, 0.54);
+        /* padding: 5px 35px 5px 35px; */
+        /* margin-top: 20px; */
+        border-radius: 7px;
+        font-size: 1em;
+        /* width: 100px; */
+        height: 30px;
+        font-family: 'Source Sans Pro';
+    }
+    
+    ::placeholder{
+        font-family: 'Source Sans Pro';
+        color: rgba(0, 0, 0, 0.43);
+        font-weight: thin;
+        font-size: 15px;
+    }
+
+    .new-account{
+        padding: 20px 0;
+    }
+}
+

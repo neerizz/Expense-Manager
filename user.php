@@ -27,7 +27,7 @@
             {
 
                 $_SESSION['UserId'] = $user->UserId;
-                header("Location: 3-Dashboard.php");
+                header("Location: templates/3-Dashboard.php");
             }
             else
             {
@@ -82,7 +82,7 @@
         public function logout()
         {
             session_destroy();
-            header("Location: ". BASE_URL .'1-login.php');
+            header("Location: ". BASE_URL .'templates/1-login.php');
         }
 
         public function loggedIn() {
