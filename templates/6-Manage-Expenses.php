@@ -1,15 +1,28 @@
 <?php 
 	include_once "../init.php";
-	if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
-	}
 
-	if(isset($_POST['delrec']))
-	{
-		$getFromE->delexp($_POST['ID']);
+	// User login checker
+	if ($getFromU->loggedIn() === false) {
+        header('Location: ../index.php');
 	}
 
 	include_once 'skeleton.php'; 
+
+	// Deletes expense record
+	if(isset($_POST['delrec']))
+	{
+		$getFromE->delexp($_POST['ID']);
+		echo "<script>
+				Swal.fire({
+					title: 'Done!',
+					text: 'Record deleted successfully',
+					icon: 'success',
+					confirmButtonText: 'Cool!'
+				})
+				</script>";
+	}
+
+	
 ?>
 
 <div class="wrapper">

@@ -1,5 +1,4 @@
 //Numeric input validation
-
 function validate(evt) {
     var theEvent = evt || window.event;
   
@@ -18,7 +17,4 @@ function validate(evt) {
     }
   }
 
-  function ok() {
-    alert("Record Updated Successfully");
-    return true;
-  }
+

@@ -11,6 +11,7 @@
     <link rel="icon" href="../static/images/wallet.png" sizes="16x16" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
     <link rel="stylesheet" href="../static/css/skeleton.css">
     <link rel="stylesheet" href="../static/css/11-changepass.css">
     <link rel="stylesheet" href="../static/css/7-Datewise.css">
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="../static/css/6-Manage-Expenses.css">
     <script src="../static/js/jquery-3.3.1.slim.min.js"></script>
     <script src="../static/js/yearpicker.js" async></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <title>Expense Manager</title>
     
@@ -81,7 +82,7 @@
     <div class="sidebar">
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="sidebar-nav-item">
-                <a href="3-Dashboard.php" class="sidebar-nav-link active">
+                <a href="3-Dashboard.php" class="sidebar-nav-link">
                     <div>
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
@@ -96,7 +97,7 @@
                         <i class="fas fa-coins"></i>
                     </div>
                     <span>
-                        Set Budget <!--Set budget for this month-->
+                        Set Budget 
                     </span>
                 </a>
             </li>
@@ -175,7 +176,6 @@
     <!-- end sidebar-->
     <!-- Main Content -->
     <!-- end main content -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="../static/js/skeleton.js"></script>
 </body>

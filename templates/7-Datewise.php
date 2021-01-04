@@ -1,9 +1,14 @@
 <?php 
     include_once "../init.php";
+
+    // User login check
     if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
+        header('Location: ../index.php');
     }
+
     include_once 'skeleton.php';   	
+
+    // Checks if form is submitted and redirects
     if(isset($_POST['datewise']))
     {
         header("Location: 7-Datewise-Detailed.php");

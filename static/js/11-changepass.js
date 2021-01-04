@@ -64,23 +64,23 @@ const validate = () => {
       setsuccessmsg(newpassword);
     }
 
-//validate cpassword
-  if(cpasswordval === "")
-  {
-    seterrormsg(confirmpassword, `password cannot be blank`)
-  }
-  else if(newpasswordval!==cpasswordval)
-  {
-    seterrormsg(confirmpassword,"The two passwords do not match")
-  }
-  else
-  {
-    setsuccessmsg(confirmpassword);
-  }
+  //validate cpassword
+    if(cpasswordval === "")
+    {
+      seterrormsg(confirmpassword, `password cannot be blank`)
+    }
+    else if(newpasswordval!==cpasswordval)
+    {
+      seterrormsg(confirmpassword,"The two passwords do not match")
+    }
+    else
+    {
+      setsuccessmsg(confirmpassword);
+    }
 
 
-    let yy = successmsg();
-    if(yy == true)
+    let resultant = successmsg();
+    if(resultant == true)
     return true;
     else
     return false;

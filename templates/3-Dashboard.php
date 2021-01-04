@@ -1,89 +1,97 @@
 <?php 
     include_once "../init.php";
+
+    //User login check
     if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
+        header('Location: ../index.php');
     }
+
     include_once 'skeleton.php'; 
     
-    //checker function
-    $g = $getFromB->checker($_SESSION['UserId']);
-    if($g == false)
+    if (isset($_SESSION['swal']))
     {
-        $getFromB->delrecord($_SESSION['UserId']);
+        echo $_SESSION['swal'];
+        unset($_SESSION['swal']);
     }
 
-    //Today
-    $today = $getFromE->EXPENSES($_SESSION['UserId'],0);
-    if($today == NULL)
+    // Budget validity checker 
+    $budget_validity = $getFromB->budget_validity_checker($_SESSION['UserId']);
+    if($budget_validity == false)
     {
-        $today = "No Expenses Logged Today";
+        $getFromB->del_budget_record($_SESSION['UserId']);
+    }
+
+    // Today's Expenses
+    $today_expense = $getFromE->Expenses($_SESSION['UserId'],0);
+    if($today_expense == NULL)
+    {
+        $today_expense = "No Expenses Logged Today";
     }
     else
     {
-        $today = "₹ ".$today;
+        $today_expense = "₹ ".$today_expense;
     }
 
-    //Yesterday
-    $Yester = $getFromE->Yesterday($_SESSION['UserId']);
-    if($Yester == NULL)
+    // Yesterday's Expenses
+    $Yesterday_expense = $getFromE->Yesterday_expenses($_SESSION['UserId']);
+    if($Yesterday_expense == NULL)
     {
-        $Yester = "No Expenses Logged Yesterday";
+        $Yesterday_expense = "No Expenses Logged Yesterday";
     }
     else
     {
-        $Yester = "₹ ".$Yester;
+        $Yesterday_expense = "₹ ".$Yesterday_expense;
     }
 
-    //Last 7 Days 
-    $week = $getFromE->EXPENSES($_SESSION['UserId'],6);
-    if($week == NULL)
+    // Last 7 Days' Expenses 
+    $week_expense = $getFromE->Expenses($_SESSION['UserId'],6);
+    if($week_expense == NULL)
     {
-        $week = "No Expenses Logged This Week";
+        $week_expense = "No Expenses Logged This Week";
     }
     else
     {
-        $week = "₹ ".$week;
+        $week_expense = "₹ ".$week_expense;
     }
 
-    //Last 30 Days
-    $month = $getFromE->EXPENSES($_SESSION['UserId'],29);
-    if($month == NULL)
+    // Last 30 Days' Expenses
+    $monthly_expense = $getFromE->Expenses($_SESSION['UserId'],29);
+    if($monthly_expense == NULL)
     {
-        $month = "No Expenses Logged This Month";
+        $monthly_expense = "No Expenses Logged This Month";
     }
     else
     {
-        $month = "₹ ".$month;
+        $monthly_expense = "₹ ".$monthly_expense;
     }
 
-    //Total Expenses
-    $total = $getFromE->totalexp($_SESSION['UserId']);
-    if($total == NULL)
+    // Total Expenses
+    $total_expenses = $getFromE->totalexp($_SESSION['UserId']);
+    if($total_expenses == NULL)
     {
-        $total = "No Expenses Logged Yet";
-    }
-    else
-    {
-        $total = "₹ ".$total;
-    }
-
-
-    //Budget
-
-    $v = $getFromB->checkbudget($_SESSION['UserId']);
-    if($v == NULL)
-    {
-        $v = "Not Set Yet";
+        $total_expenses = "No Expenses Logged Yet";
     }
     else
     {
-        $currmonexp = $getFromE->thismonth($_SESSION['UserId']);
+        $total_expenses = "₹ ".$total_expenses;
+    }
+
+
+    // Budget Left for the month
+    $budget_left = $getFromB->checkbudget($_SESSION['UserId']);
+    if($budget_left == NULL)
+    {
+        $budget_left = "Not Set Yet";
+    }
+    else
+    {
+        $currmonexp = $getFromE->Current_month_expenses($_SESSION['UserId']);
         if($currmonexp==NULL)
         {
             $currmonexp = 0;
         }
-        $v = $v - $currmonexp;
-        $v = "₹ ".$v;
+        $budget_left = $budget_left - $currmonexp;
+        $budget_left = "₹ ".$budget_left;
     }
 
 ?>
@@ -97,7 +105,7 @@
                             Today's Expenses
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $today ?>
+                            <?php echo $today_expense ?>
                         </p>
                     </div>
                 </div>
@@ -110,7 +118,7 @@
                             Yesterday's Expenses
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $Yester ?>
+                            <?php echo $Yesterday_expense ?>
                         </p>
                     </div>
                 </div>
@@ -123,7 +131,7 @@
                             Last 7 day's Expenses
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $week ?>
+                            <?php echo $week_expense ?>
                         </p>
                     </div>
                 </div>
@@ -136,7 +144,7 @@
                             Last 30 day's Expenses
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $month ?>
+                            <?php echo $monthly_expense ?>
                         </p>
                     </div>
                 </div>
@@ -149,7 +157,7 @@
                             Monthly Budget Left
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $v ?>
+                            <?php echo $budget_left ?>
                         </p>
                     </div>
                 </div>
@@ -162,7 +170,7 @@
                             Total Expenses
                         </h3>
                         <p style="font-size: 1.2em;">
-                            <?php echo $total ?>
+                            <?php echo $total_expenses ?>
                         </p>
                     </div>
                 </div>

@@ -219,16 +219,3 @@ function open2() {
 
 }
 
-
-// var header = document.getElementById("sidebar-nav");
-// var listitems = header.getElementsByClassName('sidebar-nav-item');
-// for (var i = 0; i < listitems.length; i++) {
-//     listitems[i].addEventListener("click", function() {
-//         var current = document.getElementsByClassName("sidebar-nav-link");
-//         for(var u =0;u < current.length ; u++){
-//             current[u].className = current[u].className.replace(" active", "");
-//         }
-       
-//         this.childNodes[1].className += " active";
-//     });
-//   }

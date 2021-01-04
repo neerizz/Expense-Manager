@@ -1,18 +1,30 @@
 <?php 
     include_once "../init.php";
+
+    // User login check
     if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
+        header('Location: ../index.php');
     }
+
     include_once 'skeleton.php'; 
 
+    // Password validation and change
     if(isset($_POST['changepwd']))
     {
-        $cc = $getFromU->userData($_SESSION['UserId'])->Password;
+
+        $old_pass_hash = $getFromU->userData($_SESSION['UserId'])->Password;
         $confirmpass = md5($_POST['oldpass']);
         function function_alert($message) {   
-            echo "<script>alert('$message');</script>"; 
+            echo "<script>
+            Swal.fire({
+                title: '',
+                text: '$message',
+                icon: '',
+                confirmButtonText: 'Okay!'
+            })
+            </script>";
         } 
-        if($confirmpass === $cc)
+        if($confirmpass === $old_pass_hash)
         {
             $getFromU->update('user',$_SESSION['UserId'], array('Password' => md5($_POST['newpass'])));
             function_alert("Password Updated Successfully");

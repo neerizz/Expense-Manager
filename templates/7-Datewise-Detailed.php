@@ -1,8 +1,11 @@
 <?php 
 	include_once '../init.php'; 
+
+	// User login check
 	if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
-    }
+        header('Location: ../index.php');
+	}
+
 	include_once 'skeleton.php';
 ?>
 
@@ -26,7 +29,7 @@
 									<th>Date</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="chart-facilitate">
 								<?php
 
 									$dtexp = $getFromE->dtwise($_SESSION['UserId'],$_POST['dtfrom'],$_POST['dtto']);
@@ -50,5 +53,18 @@
                    </div>
                </div>
            </div>
+            <div class="col-12 col-m-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Expense Graph
+                        </h3>
+						<div class="card-content">
+							<canvas id="myChart" ></canvas>
+						</div>
+                    </div>
+                </div>
+            </div>
         </div>
 </div>
+<script src="../static/js/7-Datewise-Detailed.js"></script>

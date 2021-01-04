@@ -1,5 +1,4 @@
 //For Image Preview
-
 const inpFile = document.getElementById("imageUpload");
 const previewContainer = document.getElementById("imagePreview");
 const previewImage = previewContainer.querySelector(".image-preview__image");
@@ -28,7 +27,6 @@ inpFile.addEventListener("change", function () {
 
 
 //For Form Validation:
-
 const form = document.getElementById("form")
 const fname = document.getElementById("fullname")
 const username = document.getElementById("username")
@@ -50,7 +48,7 @@ const isemail = (emailval) => {
 
 const sendData = (srate, count) => {
     if(srate === count){
-      alert("Form Submitted!");
+      // alert("Form Submitted!");
       return true;
     }
 
@@ -60,7 +58,7 @@ const successmsg = () => {
   let formcon = document.getElementsByClassName('form-control');
   var count = formcon.length -1;
   let flag = false;
-  for(var i = 0; i< formcon.length; i++)
+  for(var i = 0; i<formcon.length; i++)
   {
     if(formcon[i].className === "form-control success")
     {
@@ -76,18 +74,18 @@ const successmsg = () => {
 }
 
 const validate = () => {
-    //event.preventDefault();
     const fnameval = fname.value.trim()
     const usernameval = username.value.trim()
     const emailval = email.value.trim()
     const passwordval = password.value.trim()
     const cpasswordval = cpassword.value.trim()
-  //validate fullname
+  
+    //validate fullname
     if(fnameval === ""){
       seterrormsg(fname, "name field cannot be left blank");
     }
-    else if(fnameval.length <=2){
-      seterrormsg(fname, "minimum length : 3 characters");
+    else if(fnameval.length <=1){
+      seterrormsg(fname, "minimum length : 2 characters");
     }
     else
     {
@@ -95,7 +93,7 @@ const validate = () => {
     }
     
 
-  //validate email
+    //validate email
     if(emailval==="")
     {
       seterrormsg(email, "email cannot be left blank")
@@ -108,20 +106,20 @@ const validate = () => {
     }
     
 
-  //validate username
+    //validate username
     if(usernameval === "")
     {
       seterrormsg(username, "Username cannot be blank");
     }
     else if(usernameval.length <=2)
     {
-      seterrormsg(username, "Minimum length of username: 3 characters")
+      seterrormsg(username, "minimum length: 3 characters")
     }
     else{
       setsuccessmsg(username);
     }
 
-  //validate password
+    //validate password
 
     if(passwordval==="")
     {
@@ -136,7 +134,7 @@ const validate = () => {
       setsuccessmsg(password);
     }
 
-  //validate cpassword
+    //validate cpassword
     if(cpasswordval == "")
     {
       seterrormsg(cpassword, `This field cannot be left blank`)
@@ -150,8 +148,8 @@ const validate = () => {
       setsuccessmsg(cpassword);
     }
 
-    let yy = successmsg();
-    if(yy == true)
+    let resultant = successmsg();
+    if(resultant == true)
     return true;
     else
     return false;

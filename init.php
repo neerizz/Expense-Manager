@@ -12,7 +12,7 @@
     $getFromB = new Budget($pdo);
     $getFromE = new Expense($pdo);
 
-    define("BASE_URL", "http://localhost/Expense-Manager/");
-?>
+     define("BASE_URL", "http://localhost/ExpenseManager/");
+?>  
 
 

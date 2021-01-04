@@ -44,8 +44,8 @@ const validate = () => {
     setsuccessmsg(to);
   }
 
-    let yy = successmsg();
-    if(yy == true)
+    let resultant = successmsg();
+    if(resultant == true)
     return true;
     else
     return false;

@@ -1,7 +1,7 @@
 <?php 
 	include_once "../init.php";
 	if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
+        header('Location: ../index.php');
     }
 	include_once 'skeleton.php'; 	
 ?>
@@ -11,10 +11,7 @@
            <div class="col-12">
                <div class="card">
                    <div class="card-header">
-                        
-                        <!-- <i class="fas fa-ellipsis-h"></i> -->
                         <h4 style="font-family:'Source Sans Pro'; font-size: 1.3em; text-align: center">Expenses incurred between <?php echo date('F, Y', strtotime($_POST['mthfrom'])); ?> and <?php echo date('F, Y', strtotime($_POST['mthto'])); ?></h4>    
-
                    </div>
                    <div class="card-content">
                    <table>
@@ -23,10 +20,10 @@
 									<th>Serial No.</th>
 									<th>Item</th>
 									<th>Cost</th>
-									<th>Date</th>
+									<th>Month</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="chart-facilitate1">
 								<?php 
 									$_POST['mthto'] = $_POST['mthto']."-01";
 									$_POST['mthfrom'] = $_POST['mthfrom']."-01";
@@ -51,5 +48,19 @@
                    </div>
                </div>
            </div>
+		   <div class="col-12 col-m-12 col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>
+                            Expense Graph
+                        </h3>
+						<div class="card-content">
+							<canvas id="myChart1" ></canvas>
+						</div>
+                    </div>
+                </div>
+            </div>
         </div>
 </div>
+<script src="../static/js/8-Monthly-Detailed.js"></script>
+

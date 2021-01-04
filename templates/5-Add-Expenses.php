@@ -1,27 +1,35 @@
 <?php 
 	include_once "../init.php";
+
+	//User login checker
 	if ($getFromU->loggedIn() === false) {
-        header('Location: 1-login.php');
-    }
+        header('Location: ../index.php');
+	}
+	
 	include_once 'skeleton.php'; 
 
+	// Create an expense record
 	if(isset($_POST['addexpense']))
 	{
 		$dt = date("Y-m-d H:i:s", strtotime($_POST["dateexpense"]));
 		$itemname = $_POST['item'];
 		$itemcost = $_POST['costitem'];
 		$getFromE->create("expense", array('UserId'=>$_SESSION['UserId'], 'Item' => $itemname, 'Cost'=>$itemcost, 'Date' => $dt));
-		echo "<script>alert('Records Updated Successfully');</script>";
+		echo '<script>
+			Swal.fire({
+				title: "Done!",
+				text: "Records Updated Successfully",
+				icon: "success",
+				confirmButtonText: "Cool"
+			})
+			</script>';
 	}
-
-
 ?>
 
 <div class="wrapper">
         <div class="row">
             <div class="col-12 col-m-12 col-sm-12" >
                 <div class="card">
-                <!-- style="height: 40vh; display: flex; align-items: center; justify-content: center;" -->
                     <div class="counter bg-danger" style="height: 60vh; display: flex; align-items: center; justify-content: center;">
                     <form action="" method="post">
 								<div>
@@ -52,4 +60,4 @@
         </div>
     </div>
 
-    <script src="../static/js/5-Add-Expenses.js"></script>
+    <script src="../static/js/4-Set-Budget.js"></script>

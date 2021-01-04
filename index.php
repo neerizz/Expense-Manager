@@ -1,10 +1,12 @@
 <?php 
-    include_once "../init.php";
+    include_once "init.php";
     
+    // User login check
     if (isset($_SESSION['UserId'])) {
-      header('Location: 3-Dashboard.php');
+      header('Location: templates/3-Dashboard.php');
     }
 
+    // Validate credentials and log the user in
     if (isset($_POST['login']) && !empty($_POST)) {
         $password = $_POST['password'];
         $username = $_POST['username'];
@@ -17,7 +19,6 @@
             }
           } 
     }
-
 ?>
 
 
@@ -27,8 +28,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../static/images/wallet.png" sizes="16x16" type="image/png">
-    <link rel="stylesheet" href="../static/css/1-login.css">
+    <link rel="icon" href="static/images/wallet.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="static/css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
@@ -48,7 +49,7 @@
         <div class="top-heading">
             <h1>Welcome to ExpenseManager!</h1>
         </div>
-        <form action="1-login.php" method="post" onsubmit = "return validate()" id="form1">
+        <form action="index.php" method="post" onsubmit = "return validate()" id="form1">
 
             <div class="group">
 
@@ -57,19 +58,16 @@
                 <i class="fa fa-user-plus u3" aria-hidden="true"></i>
                 <input type="text" name="username" placeholder="Username" id="user1" required>
                 <br>
-                <small>drgar</small>
+                <small></small>
                 </div>
 
                 <div class="form-controller">
                 <i class="fa fa-key u4" aria-hidden="true"></i>
                 <input type="password" name="password" placeholder="Password" id="pass1" autocomplete="on" required>
                 <br>
-                <small>srgs</small>
+                <small></small>
                 </div>
-                
-                <br>
-                <a href="" class="fgt-pwd">Forgot password?</a>
-                <br>
+
             </div>
             <button type="submit" class="sign-in" name="login">SIGN IN</button>
 
@@ -80,39 +78,20 @@
                     echo '<div style="color:  red;font-family:'.$font.';">'.$error.'</div>';
                 }
             ?>
-            <div class="or-text">
-                <span>Or</span>
-            </div>
-            <br>
-
-            <div class="social-btn">
-                <a href="">
-                    <button class="fb-btn"><i class="fa fa-facebook" aria-hidden="true"></i>Facebook</button>
-                </a>
-
-                <br>
-                <br>
-                
-                <a href="">
-                    <button class="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Google</button>
-                </a>
-            </div>
-
+            
             <div class="new-account">
                 <span style="color: rgba(0, 0, 0, 0.54); font-weight: bolder; font-family: 'Source Sans Pro';">Don't have an account?</span> 
-                <a href="2-sign-up.php" style="text-decoration: none;"><span style="color: rgba(5, 0, 255, 0.81); font-weight: bolder; font-family: 'Source Sans Pro';">Sign up</span></a>
+                <a href="templates/2-sign-up.php" style="text-decoration: none;"><span style="color: rgba(5, 0, 255, 0.81); font-weight: bolder; font-family: 'Source Sans Pro';">Sign up</span></a>
             </div>
 
         </form>
 
         <div class="img-container">
-            <img src="../static/images/login.jpg" alt="Login-screen-picture">
-
+            <img src="static/images/login.jpg" alt="Login-screen-picture">
         </div>
     </div>
 
-
-<script src="../static/js/1-login.js"></script>
+<script src="static/js/index.js"></script>
 </body>
 
 </html>

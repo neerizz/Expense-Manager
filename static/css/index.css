@@ -108,7 +108,7 @@
     .sign-in{
         outline: 0 !important;
         border: none;
-        color: #dddddd;
+        color: white;
         background-color: rgba(5, 0, 255, 0.81);
         padding: 5px 35px 5px 35px;
         margin-top: 20px;
