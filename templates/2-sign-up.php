@@ -197,7 +197,7 @@
                 }
                 else
                 {
-                    $("#uname_response").html("");
+                    $("#uname_response").html("<br/>");
                 }
             });
 
